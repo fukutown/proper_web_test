@@ -1,0 +1,31 @@
+version: '3'
+services:
+    web-api:
+        build: web-api
+        container_name: api-server
+        links:
+            - mongodb
+        ports:
+            - "3031:3031"
+        environment:
+            TZ: "Asia/Tokyo"
+        volumes:
+            - ./web-api/python:/var/www
+
+    web-gui:
+        build: web-gui
+        container_name: web-server
+        links:
+            - web-api
+        ports:
+            - "80:80"
+        environment:
+            TZ: "Asia/Tokyo"
+        volumes:
+            - ./logs:/var/log/nginx
+
+    mongodb:
+        image: mongo:latest
+        container_name: api-db
+        volumes:
+            - ./database/mongo-data:/usr/data/db
