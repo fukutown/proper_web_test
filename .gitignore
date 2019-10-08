@@ -1,2 +1,7 @@
-./logs/
+# Unnecessary Directorys
+logs/*
+.DS_Store/*
 ./database/mongo-data/
+
+# Unnecessary Files
+*.swp
