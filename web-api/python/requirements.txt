@@ -1,0 +1,9 @@
+Flask==1.1.1
+uwsgi==2.0.17
+Flask-PyMongo
+flask-restful
+flask_marshmallow
+autopep8
+flake8
+rope
+flask-cors

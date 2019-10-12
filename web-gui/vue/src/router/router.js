@@ -8,10 +8,12 @@ import CreateTest from '@/components/pages/settings/tests/create/CreateTest'
 Vue.use(Router)
 
 const routes = [
+    // tmp
+    { path: '/', component: TestList },
     // テスト一覧ページ
     { path: '/settings/tests', component: TestList },
     // テスト作成ページ
-    { path: '/settings/tests/create', name: 'CreateTest', component: CreateTest },
+    { path: '/settings/tests/create', component: CreateTest },
 ]
 
 export default new Router({

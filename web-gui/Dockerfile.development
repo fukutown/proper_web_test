@@ -1,0 +1,10 @@
+FROM nginx:latest
+
+ENV LANG C.UTF-8
+ENV TZ Asia/Tokyo
+
+COPY nginx/nginx_dev.conf /etc/nginx/nginx.conf
+
+EXPOSE 80 443
+
+CMD ["nginx", "-g", "daemon off;","-c","/etc/nginx/nginx.conf"]
