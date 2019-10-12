@@ -1,7 +1,8 @@
 version: '3'
 services:
     web-api:
-        build: web-api
+        build:
+            context: web-api
         container_name: api-server
         links:
             - mongodb
@@ -9,11 +10,10 @@ services:
             - "3031:3031"
         environment:
             TZ: "Asia/Tokyo"
-        volumes:
-            - ./web-api/python:/var/www
 
     web-gui:
-        build: web-gui
+        build:
+            context: web-gui
         container_name: web-server
         links:
             - web-api
