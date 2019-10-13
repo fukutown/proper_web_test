@@ -15,7 +15,7 @@ export default {
       this.fetchTests();
     },
     async fetchTests() {
-      const uri = '/settings/tests';
+      const uri = '/settings/subjects';
       return this.$axios.get(uri)
         .then(res => {
           this.message = res.data.results;

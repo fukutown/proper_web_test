@@ -1,7 +1,8 @@
-# Unnecessary Directorys
+# Ignore Directorys
 logs/*
 .DS_Store/*
 ./database/mongo-data/
+__pycache__/
 
 # Unnecessary Files
 *.swp
