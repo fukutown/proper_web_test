@@ -2,18 +2,18 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 // import component
-import TestList from '@/components/pages/settings/tests/TestList'
-import CreateTest from '@/components/pages/settings/tests/create/CreateTest'
+import SubjectsList from '@/components/pages/settings/subjects/SubjectsList'
+import CreateSubject from '@/components/pages/settings/subjects/create/CreateSubject'
 
 Vue.use(Router)
 
 const routes = [
     // tmp
-    { path: '/', component: TestList },
+    { path: '/', component: SubjectsList },
     // テスト一覧ページ
-    { path: '/settings/tests', component: TestList },
+    { path: '/settings/subjects', component: SubjectsList },
     // テスト作成ページ
-    { path: '/settings/tests/create', component: CreateTest },
+    { path: '/settings/subjects/create', component: CreateSubject },
 ]
 
 export default new Router({

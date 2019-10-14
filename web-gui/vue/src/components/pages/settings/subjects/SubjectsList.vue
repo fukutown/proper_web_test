@@ -1,11 +1,11 @@
-<template src="./test_list.html"></template>
+<template src="./subjects_list.html"></template>
 
 <script>
 export default {
   mixins: [],
   data() {
     return {
-      message: 'aaaaa'
+      message: ''
     }
   },
   computed: {},
@@ -21,14 +21,12 @@ export default {
           this.message = res.data.results;
         })
         .catch(err => {
-          //console.log(err)
           this.message = err;
         })
         .finally()
     }
   },
   created() {
-    // console.log(process.env.VUE_APP_API_URL)
     this.initData();
   }
 }
