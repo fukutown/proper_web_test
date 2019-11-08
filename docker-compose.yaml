@@ -5,7 +5,7 @@ services:
             context: web-api
         container_name: api-server
         links:
-            - mongodb
+            - api-db
         ports:
             - "3031:3031"
         environment:
@@ -24,8 +24,17 @@ services:
         volumes:
             - ./logs:/var/log/nginx
 
-    mongodb:
-        image: mongo:latest
-        container_name: api-db
+    api-rdb:
+        image: mysql:5.7
+        container_name: api-rdb
+        command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
         volumes:
-            - ./database/mongo-data:/usr/data/db
+            - ./mysql/mysql-data:/var/lib/mysql
+            - ./mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_USER: dvedeve
+            MYSQL_PASSWORD: devdev
+            TZ: 'Asia/Tokyo'
+        ports:
+            - "3306:3306"

@@ -1,7 +1,7 @@
 # Ignore Directorys
 logs/*
 .DS_Store/*
-./database/mongo-data/
+mysql/mysql-data/*
 __pycache__/
 
 # Unnecessary Files
