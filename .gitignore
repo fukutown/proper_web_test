@@ -3,6 +3,8 @@ logs/*
 .DS_Store/*
 mysql/mysql-data/*
 __pycache__/
+web-api/web-test-app/node_modules/*
+web-api/web-test-app/.vscode/*
 
 # Unnecessary Files
 *.swp
